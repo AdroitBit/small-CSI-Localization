@@ -25,6 +25,13 @@ The input will be two sets of csi datas
 * The set of 20 csi datas that represent Y-axis
 
   * ```
+    ex.
+    [
+    	[84 0 0 0 0 ...],
+    	[84 0 0 0 0 ...],
+    	...
+    	...
+    ]
 
     ```
 
