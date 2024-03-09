@@ -135,4 +135,4 @@ For this method I design this way.
 
 It would takes long to explain how the code works. So let's continue with how to use the program
 
-(Here)[README2.md]
+![continue](README2.md)
