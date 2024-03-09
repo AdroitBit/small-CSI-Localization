@@ -10,32 +10,41 @@ We have to define the input and output for the machine learning model.
 
 The input will be two sets of csi datas
 
-* The set of 20 csi datas that represent X-axis
+* The array of 20 csi datas that represent X-axis
 
   * ```
     ex.
     [
-    	[84 0 0 0 0 ...],
-    	[84 0 0 0 0 ...],
+    	[84,0,0,0,0 ...],
+    	[84,0,0,0,0 ...],
     	...
     	...
     ]
 
     ```
-* The set of 20 csi datas that represent Y-axis
+* The array of 20 csi datas that represent Y-axis
 
   * ```
     ex.
     [
-    	[84 0 0 0 0 ...],
-    	[84 0 0 0 0 ...],
+    	[84,0,0,0,1 ...],
+    	[84,0,0,0,8 ...],
     	...
     	...
     ]
 
     ```
 
-The output from model will be will be 16 members array with 0 and 1 value ex. `[1,0,0,0,1,0,0,1,0,0,0...]`
+The output from model will be will be 16 members array with 0 and 1 value ex. `[1,0,0,0,1,0,0,1,0,0,0...]` and will be converted to 2d array of 4x4
+
+```
+[
+    [1,0,0,0],
+    [0,1,0,0],
+    [0,0,0,0],
+    [0,0,1,1]
+]
+```
 
 1= object in there
 
@@ -66,17 +75,64 @@ The method of collecting data to sd card sounds like a good idea. But your data 
 
 # Datasets definition
 
-For the speed of data processing we should collect CSI as .csv file obviously.
+For the simpleness of data collection.
 
-* 1st column will be global UTC Time string
-* 2nd column will be "20 sets of csi_datas_x" and actually contains 20x128 array
-* 3nd column will be "20 sets of csi_datas_x" and actually contains 20x128 array
-* That is length of CSI_data is 128 and go along for 20 csi_data
-* 4th column will contain 4x4 2d array named "map_data"
-* 5th column might contain url of the image
+We should collect CSI data and current map data with json file. And attached with the image file for verification
 
-# Data collection method
+* proposed json file format
 
-For data collector program that obtain CSI data by reading the serial. It might have to be written in C++.
+  * ```
+    {
+      "UTC_Time": "2021-01-01 00-00-00-000000",
+      "CSI_Datas_X": [
+        [84,0,0,0,0 ...],
+        [84,0,0,0,0 ...],
+        ...
+        ...
+      ],
+      "CSI_Datas_Y": [
+        [84,0,0,0,1 ...],
+        [84,0,0,0,8 ...],
+        ...
+        ...
+      ],
+      "Map_Data": [
+        [1,0,0,0],
+        [0,1,0,0],
+        [0,0,0,0],
+        [0,0,1,1]
+      ],
+      "Image_URL": "2021-01-01 00-00-00-000000.jpg"
+    }
+    ```
 
-But I'll make sure the code is easy to read and compile.
+  ```
+
+  ```
+
+# Data collection method design/rule/protocol
+
+For Data collection method. We must obtain CSI data like the way we gonna obtain csi data for prediction process.
+
+That is
+
+* if data collection method written in Python. The program that used the model must be written in Python too.
+* if data collection method written in C++. The program that used the model must be written in C++ too.
+* If the program that used model obtain CSI data from serial port. The data collector must obtain CSI data from serial port too.
+* If the program that used model reset serial every interval. The data collector must reset serial every interval too.
+* same packet rate for step 1 and step 3 process
+* same length of csi data used for step 1,2,3
+
+## Automatic labelling method
+
+For this method I design this way.
+
+* The object is not moving in the area
+* you run the program
+* enter the input
+* making sure RX and TX communicate and continuously through my serial monitor UI
+  * It is normal to see some missing string in serial monitor because I flush it every loop (so the csi data is always the newest)
+
+It would takes long to explain how the code works. So let's continue with how to use the program
+
+(Here)[README2.md]

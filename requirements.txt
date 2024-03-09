@@ -1,0 +1,4 @@
+pyserial
+tensorflow
+opencv-python
+opencv-contrib-python #optional but I added anyway
