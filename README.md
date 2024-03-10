@@ -1,6 +1,7 @@
-# smalll-CSI-Localization
+# simple-CSI-Localization
 
-CSI Localization as an example?
+example? tutorial? framework? template? You named it!
 
+This simple is about using CSI to localize the object in the area.
 
-The goal is to display CSI-localization map on frontend webpage.
+With a step by step explanation!
