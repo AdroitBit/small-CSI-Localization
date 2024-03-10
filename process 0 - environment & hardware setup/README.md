@@ -55,10 +55,23 @@ where
 * red = low
 * black = lowest
 
+Consider the position in red and black area "blind spot"
+
 Now let's compare which theorically could be the best placement for ESP32 between `putting on the rectangle's sides` and `putting in the corner`
 
-|               | putting on the rectangle's sides | putting in the corner |
-| ------------- | -------------------------------- | --------------------- |
-| image         | ![nigga](image/style_comparison/rectangle_side.jpg)                                 |  ![nigga](image/style_comparison/corner.jpg)                      |
-| heatmap image |                                  |                       |
-| description   |                                  |                       |
+|                      | putting on the rectangle's sides                              | putting in the corner                                 |
+| -------------------- | ------------------------------------------------------------- | ----------------------------------------------------- |
+| image                | ![img](image/style_comparison/rectangle_side.jpg)               | ![img](image/style_comparison/corner.jpg)               |
+| heatmap image pair 1 | ![img](image/style_comparison/rectangle_side_pair1_heatmap.png) | ![img](image/style_comparison/corner_pair1_heatmap.png) |
+| heatmap image pair 2 | ![img](image/style_comparison/rectangle_side_pair2_heatmap.png) | ![img](image/style_comparison/corner_pair2_heatmap.png) |
+| description          | Area number 4 is in blind spot twice.                        | No special area is considered in blind spot           |
+
+So for this project I'll go with `putting in the corner` style.
+Where bottom left is pair 1 RX and bottom right is pair 2 RX.
+and top left is pair 2 TX and top right is pair 1 TX.
+
+However be noted that CSI data is very sensitive. So the style of placement night not really matter as much here.
+
+Alright! Tape or Glue ESP32 down and we are ready to go with hardware setup!
+
+Continue with `README2.md`
