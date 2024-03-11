@@ -1,8 +1,8 @@
 # small-CSI-Localization
 
-example? tutorial? framework? template? You named it!
+Welcome to Small-CSI-Localization! This project aims to utilize Channel State Information (CSI) for object localization within a given area.
 
-This simple project is about using CSI to localize the object in the area.
+Inside each folder include the detailed README.md about the project's process so you can follow along.
 
 process 0 - finished
 
