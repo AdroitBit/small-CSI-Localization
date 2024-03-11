@@ -45,7 +45,7 @@ But theorically ESP32 should emit the wave most intensely in front more than the
 So we can roughly split area of signal intensity like this.
 
 <p align="center">
-  <img src="image/ESP32-CSI-emission.png" width="200" />
+  <img src="image/ESP32-CSI-emission.jpg" width="200" />
 </p>
 
 where
@@ -62,8 +62,8 @@ Now let's compare which theorically could be the best placement for ESP32 betwee
 |                      | putting on the rectangle's sides                              | putting in the corner                                 |
 | -------------------- | ------------------------------------------------------------- | ----------------------------------------------------- |
 | image                | ![img](image/style_comparison/rectangle_side.jpg)               | ![img](image/style_comparison/corner.jpg)               |
-| heatmap image pair 1 | ![img](image/style_comparison/rectangle_side_pair1_heatmap.png) | ![img](image/style_comparison/corner_pair1_heatmap.png) |
-| heatmap image pair 2 | ![img](image/style_comparison/rectangle_side_pair2_heatmap.png) | ![img](image/style_comparison/corner_pair2_heatmap.png) |
+| heatmap image pair 1 | ![img](image/style_comparison/rectangle_side_pair1_heatmap.jpg) | ![img](image/style_comparison/corner_pair1_heatmap.jpg) |
+| heatmap image pair 2 | ![img](image/style_comparison/rectangle_side_pair2_heatmap.jpg) | ![img](image/style_comparison/corner_pair2_heatmap.jpg) |
 | description          | Area number 4 is in blind spot twice.                        | No special area is considered in blind spot           |
 
 So for this project I'll go with `putting in the corner` style.
