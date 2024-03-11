@@ -122,15 +122,19 @@ That is
 * If the program that used model reset serial every interval. The data collector must reset serial every interval too.
 * same packet rate for step 1 and step 3 process
 * same set's length of csi data used for step 1,2,3
+* the ordering set of csi data should be identical too
+  * index 0 = oldest
+  * last index = latest
 
 ## Automatic labelling method
 
-For this method I design this way.
+I design it the program this way
 
-* The object is not moving in the area
-* you run the program
-* enter the input
-* making sure RX and TX communicate and continuously through my serial monitor UI
-  * It is normal to see some missing string in serial monitor because I flush it every loop (so the csi data is always the newest)
+* You open the program
+* Config everything
+* Making sure RX TX communicate properly through my written serial monitor
+  * If not just keep pressing RESET button (EN) until it works
+* Camera  panning toward the area (optional)
+* 
 
 It would takes long to explain how the code works. So let's continue with how to use the program in `README2.md`
