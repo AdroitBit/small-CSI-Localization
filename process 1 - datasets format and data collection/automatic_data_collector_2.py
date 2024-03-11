@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import scrolledtext
-from function_holder.ButtonFrame import *
+from function_holder.StartOrStopBtnFrame import *
+from function_holder.ConfigurationsFrame import *
 
 class App:
     def __init__(self, master):
@@ -11,12 +12,17 @@ class App:
         # self.create_layout()
 
         #create the button for the user 
-        self.button_frame = ButtonFrame(self.master)
-        self.button_frame.pack(fill=tk.BOTH, padx=5, pady=5)
+        self.start_or_stop = StartOrStopBtnFrame(self.master)
+        self.start_or_stop.pack(fill=tk.BOTH, padx=5, pady=5)
+
+        self.configurations = ConfigurationsFrame(self.master, title="Data Collection Configurations")
+        self.configurations.pack(fill=tk.BOTH, padx=5, pady=5,side=tk.TOP)
 
 
         #create the scrollable widget and append the data collecting configuration element to it
-        print(self.fuck)
+        # print(self.fuck)
+
+    
 
 root = tk.Tk()
 app = App(root)

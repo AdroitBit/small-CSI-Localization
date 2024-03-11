@@ -5,3 +5,6 @@ opencv-contrib-python #optional but I added anyway
 # tkinter must have please checking during python installation
 uvicorn
 fastapi
+
+pyqt5 #might not used
+PyQt5
